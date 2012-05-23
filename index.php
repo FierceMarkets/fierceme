@@ -1,8 +1,7 @@
 <?php
 $pub = trim($_GET['pub']);
 $font = 'eurostilebold.ttf';
-?>
-<?php
+
 /*header('Content-Type: image/png');
 
 $im = imagecreatetruecolor(375, 72);
@@ -19,8 +18,7 @@ imagettftext($im, 29, 0, 0, 72, $black, $font, $text);
 
 imagepng($im);
 imagedestroy($im);*/
-?>
-<?PHP
+
 
 $STRING = $pub;
 
@@ -83,10 +81,10 @@ for($i=0; $i<count($array); $i++)
 	}
 	else
 	{
-    	$bbox = imagettftext( $canvas, $FONT_SIZE* $SCALE, 0, $hpos, $BASELINE* $SCALE, $orange, $FONT, $array[$i] );
-    }
+  	$bbox = imagettftext( $canvas, $FONT_SIZE* $SCALE, 0, $hpos, $BASELINE* $SCALE, $orange, $FONT, $array[$i] );
+  }
    
-    $hpos = $bbox[2]+$KERNING;
+  $hpos = $bbox[2]+$KERNING;
 }
 
 // ---- SAMPLE DOWN & OUTPUT
@@ -110,4 +108,3 @@ imagePNG($final);
 imageDestroy($canvas);
 imageDestroy($final);
 
-?>
