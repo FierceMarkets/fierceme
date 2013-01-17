@@ -1,24 +1,6 @@
 <?php
 $pub = trim($_GET['pub']);
-$font = 'eurostilebold.ttf';
-
-/*header('Content-Type: image/png');
-
-$im = imagecreatetruecolor(375, 72);
-
-imagealphablending($im, false);
-imagesavealpha($im, true);
-
-$trans = imagecolorallocatealpha($im, 255, 255, 255, 127);
-$black = imagecolorallocate($im, 0, 0, 0);
-imagefilledrectangle($im, 0, 0, 375, 72, $trans);
-
-imagealphablending($im, true);
-imagettftext($im, 29, 0, 0, 72, $black, $font, $text);
-
-imagepng($im);
-imagedestroy($im);*/
-
+$font = 'eurostileltstd-demi.ttf';
 
 $STRING = $pub;
 
@@ -83,7 +65,7 @@ for($i=0; $i<count($array); $i++)
 	{
   	$bbox = imagettftext( $canvas, $FONT_SIZE* $SCALE, 0, $hpos, $BASELINE* $SCALE, $orange, $FONT, $array[$i] );
   }
-   
+
   $hpos = $bbox[2]+$KERNING;
 }
 
@@ -97,7 +79,7 @@ imagesavealpha($final, true);
 imageCopyResampled( $final, $canvas, 0,0,0,0, $WIDTH, $HEIGHT, $WIDTH* $SCALE, $HEIGHT* $SCALE );
 
 header("Pragma: public");
-header("Expires: 0"); 
+header("Expires: 0");
 header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
 header("Cache-Control: private",false);
 header('Content-type: image/png');
